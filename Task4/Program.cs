@@ -19,32 +19,7 @@ int NumbersInput (string input)
     return newInput;
 
 }
-void FillArray(int[,,] matrix)
-{
-    int temp = 0;
-    for(int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for(int j = 0; j < matrix.GetLength(1); j++)
-        {
-            for(int l = 0; l < matrix.GetLength(2); l++)
-            {
-                matrix[i,j,l] = new Random().Next(1,10);
-                temp = matrix[i,j,l];
-            }
-        }
-    }
-    for(int x = 0; x < m; x++)
-    {
-        for(int y = 0; y < n; y++)
-        {
-            for(int z = 0; z < k; z++)
-            {
-                if(temp == matrix[x,y,x]);
-                break;
-            }
-        }
-    } 
-}
+
 
 void PrintArray (int[,,] matrix)
 {
@@ -63,6 +38,42 @@ void PrintArray (int[,,] matrix)
   }
 }
 
+void FillArray (int[,,] matrix)
+{
+    int[] temp = new int[matrix.GetLength(0) * matrix.GetLength(1) * matrix.GetLength(2)];
+    int number = 0;
+    for(int i = 0; i < temp.Length; i++)
+    {
+        temp[i] = new Random().Next(10, 100);
+        number = temp[i];
+        if(i >= 1)
+        {
+            for(int j = 0; j < i; j++)
+            {
+                while (temp[i] == temp[j])
+                {
+                    temp[i] = new Random().Next(10, 100);
+                    j = 0;
+                    number = temp[i];
+                }
+                number = temp[i];
+          
+            }
+        }
+    }
+    int count = 0;
+    for(int i = 0; i < result.GetLength(0); i++)
+    {
+        for(int j = 0; j < result.GetLength(1); j++)
+        {
+            for(int l = 0; l < result.GetLength(2); l++)
+            {
+                result[i,j,l] = temp[count];
+                count++;
+            }
+        }
+    }
 
+}
 
 
