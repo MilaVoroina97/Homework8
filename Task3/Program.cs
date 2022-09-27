@@ -13,14 +13,17 @@ try
     int k = NumbersInput("Введите число столбцов второй матрицы:");
     int[,] firstMatrix = new int[m,n];
     FillArray(firstMatrix);
+    Console.WriteLine("Первая матрица: ");
     PrintArray(firstMatrix);
     Console.WriteLine();
     int[,] secondMatrix = new int[n,k];
     FillArray(secondMatrix);
+    Console.WriteLine("Вторая матрица: ");
     PrintArray(secondMatrix);
     Console.WriteLine();
     int[,] resultMatrix = new int[m,k];
     MatrixMultiplication(firstMatrix,secondMatrix,resultMatrix);
+    Console.WriteLine("Результат умножения двух матриц: ");
     PrintArray(resultMatrix);
 }
 catch
