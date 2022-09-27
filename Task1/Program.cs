@@ -14,8 +14,10 @@ try
     int m = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Введите число столбцов двумерного массива:");
     int n = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine();
     int[,] newarray = new int[m,n];
     FillArray(newarray);
+    Console.WriteLine("Изначальный массив: ");
     PrintArrayTwo(newarray);
     int[] table = new int[m*n];
     int x = 0;
@@ -41,6 +43,7 @@ try
             
         }
     }
+    Console.WriteLine("Отсортированный массив: ");
     PrintArrayTwo(newarray2);  
 }
 catch
