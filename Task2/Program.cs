@@ -74,7 +74,7 @@ int SumOfRows(int[,] newarray, int i)
         sum += newarray[i,j];
     }
 
-    Console.WriteLine($"Сумма элементов {i} строки равна: {sum}");
+    Console.WriteLine($"Сумма элементов {i+1} строки равна: {sum}");
     return sum;
 }
 
