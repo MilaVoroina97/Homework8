@@ -5,13 +5,19 @@
 // 34(1,0,0) 41(1,1,0)
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
-
-int m = NumbersInput("Введите число матриц X: ");
-int n = NumbersInput("Введите число строк матрицы Y: ");
-int k = NumbersInput("Введите число столбцов матрицы Z: ");
-int[,,] result = new int[m,n,k];
-FillArray(result);
-PrintArray(result);
+try
+{
+    int m = NumbersInput("Введите число матриц X: ");
+    int n = NumbersInput("Введите число строк матрицы Y: ");
+    int k = NumbersInput("Введите число столбцов матрицы Z: ");
+    int[,,] result = new int[m,n,k];
+    FillArray(result);
+    PrintArray(result);
+}
+catch
+{
+    Console.WriteLine("Введите, пожалуйста, целые и положительные числа.");
+}
 int NumbersInput (string input)
 {
     Console.Write(input);
@@ -62,13 +68,13 @@ void FillArray (int[,,] matrix)
         }
     }
     int count = 0;
-    for(int i = 0; i < result.GetLength(0); i++)
+    for(int i = 0; i < matrix.GetLength(0); i++)
     {
-        for(int j = 0; j < result.GetLength(1); j++)
+        for(int j = 0; j < matrix.GetLength(1); j++)
         {
-            for(int l = 0; l < result.GetLength(2); l++)
+            for(int l = 0; l < matrix.GetLength(2); l++)
             {
-                result[i,j,l] = temp[count];
+                matrix[i,j,l] = temp[count];
                 count++;
             }
         }
